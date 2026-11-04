@@ -849,7 +849,7 @@ pub fn system_title_bar(app: &PhotocraftApp) -> bool {
 /// drops out and only the app name (and the `*`) remains (#5037).
 pub fn window_title(app: &PhotocraftApp) -> String {
     if !app.session.prefs().interface.show_file_name_in_title {
-        return format!("{}PhotoCraft", if app.session.active().is_some_and(|d| d.is_dirty()) { "*" } else { "" });
+        return format!("{}Photoschool", if app.session.active().is_some_and(|d| d.is_dirty()) { "*" } else { "" });
     }
     app.session.active().map(|d| format!("{}{} \u{2014} Photoschool", if d.is_dirty() { "*" } else { "" }, d.doc.name)).unwrap_or_else(|| "Photoschool".into())
 }
